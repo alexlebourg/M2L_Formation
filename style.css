@@ -1,0 +1,163 @@
+/*
+	Page d'accueil
+*/
+
+
+
+body
+{
+	background-image:linear-gradient(to top, #CBCBCB, #81B7DF);
+}
+
+/* Div de l'entête*/
+#M2L
+{
+	text-align: center;
+}
+
+/* Div comprennant tout le corps de texte de la page d'accueil*/
+#corpsSite
+{
+	margin-left: 10%;
+	margin-right: 10%;
+	padding-left: 3%;
+	padding-right: 3%;
+	padding-top: 5%;
+	padding-bottom: 10%;
+	background: white;
+	border-radius: 20px;
+	border: 1px black outset;
+	box-shadow: 6px 6px 6px grey;
+	text-align: justify;
+}
+
+/* Div comprenant tout le Menu*/
+#menu
+{
+	border: 1px double black;
+	padding: 10px 1px 10px 20px;
+	border-radius: 10px;
+	background-color: #C1E7FF;
+	font-family: cursive;
+	font-weight: bold;
+	font-size: 18px;
+	
+}
+
+/* Div du menu: Accueil*/
+#menuDivAccueil
+{
+	display: inline-block;
+	padding: 10px 10px 10px 10px;
+}
+/* Div du menu: Formation*/
+#menuDivFormation
+{
+	display: inline-block;
+	padding: 10px 10px 10px 10px;
+	margin-left: 30px;
+}
+/* Div du menu: Compte*/
+#menuDivCompte
+{
+	display: inline-block;
+	padding: 10px 10px 10px 10px;
+	margin-left: 30px;
+	
+}
+/* Div du menu: Se connecter*/
+#menuDivLog
+{
+	display: inline-block;
+	padding: 5px 10px 5px 10px;
+	border: 1px solid black;
+	margin-left: 25%;
+	font-weight: normal;
+	font-size: 16px;
+}
+
+#connexion
+{
+	font-family: serif;
+	font-weight: normal;
+	font-size: 14px;
+	text-align: center;
+}
+
+/* Présentation de la maison des ligues: Titre*/
+#titreText
+{
+	font-family: cursive;
+}
+
+a
+{
+	color: black;
+	text-decoration: none;
+}
+/*Survol lien menu*/
+#menuDivAccueil:hover,#menuDivFormation:hover,#menuDivCompte:hover
+{
+	box-shadow: 6px 6px 6px grey;
+	
+}
+
+
+/*
+	Page fomation
+*/
+#tableInfo
+{
+	margin-left: auto;
+	margin-right: auto;
+}
+td
+{
+	border: 1px solid black;
+	padding-right: 10px;
+}
+#td1
+{
+	text-align: right;
+	font-weight: bold;
+}
+td2
+{
+	padding-left: 20px;
+}
+#blanc
+{
+	border: none;
+}
+
+
+/*
+	Page compte
+*/
+
+#tableFormation
+{
+	border-collapse: collapse;
+	width: 100%;
+	text-align: center;
+}
+thead
+{
+	font-weight: bold;
+}
+
+#tdFormation
+{
+	width: 40%;
+}
+#tdDate,#tdDuree,#tdOrganisme
+{
+	width: 20%;
+}
+h2
+{
+	font-family: cursive;
+	font-size: 20px;
+	margin-left: 30px
+}
+
