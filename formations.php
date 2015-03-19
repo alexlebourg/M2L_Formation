@@ -1,4 +1,4 @@
-
+<?php session_start() ?>
 <!DOCTYPE html>
 
 <html>
@@ -6,9 +6,6 @@
     <head>
         <meta charset="utf-8">
 
-	<!--[if lt IE 9]>
-	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
 
 	<link rel="stylesheet" href="style.css">
 	
@@ -47,11 +44,11 @@
 	    		</tr>
 				<tr>
 					<td id="td1">Nombres d'heures de DIF utilisées</td>
-					<td id="td2"><?php $liste = VerifConnexion(); foreach ($liste as $ligne) { echo $ligne['DIFUtilisee'];}?></td>
+					<td id="td2"><?php $liste = SelectUtilisateur(); foreach ($liste as $ligne) { echo $ligne['DIFUtilisee'];}?></td>
 	    		</tr>
 				<tr>
 					<td id="td1">Nombre d'heures de DIF disponibles</td>
-					<td id="td2"><?php $liste = VerifConnexion(); foreach ($liste as $ligne) { echo $ligne['nbrDIF']-$ligne['DIFUtilisee'];}?></td>
+					<td id="td2"><?php $liste = SelectUtilisateur(); foreach ($liste as $ligne) { echo $ligne['nbrDIF']-$ligne['DIFUtilisee'];}?></td>
 	    		</tr>
 	    	</table>
 	    <br>

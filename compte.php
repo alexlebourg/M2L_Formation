@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 
 <html>
@@ -48,26 +49,28 @@
 		    <td id="blanc"><br></td>
 		    <td id="blanc"><br></td>
 	    </tr>
+	    <?php
+	    	$liste = SelectUtilisateur();
+    foreach ($liste as $ligne)
+    {
+    	?>
 	    <tr>
 		    <td id="td1">Nom du salarié</td>
-		    <td id="td2">Bouley</td>
+		    <td id="td2"><?php echo $ligne['nom'];?></td>
 	    </tr>
 	    <tr>
 		    <td id="td1">Prénom du salarié</td>
-		    <td id="td2">Valérie</td>
+		    <td id="td2"><?php echo $ligne['prenom'];?></td>
 	    </tr>
 	    <tr>
 		    <td id="td1">Fonction</td>
-		    <td id="td2">Chargée de communication</td>
-	    </tr>
-	    <tr>
-		    <td id="td1">Numéro de sécurité sociale</td>
-		    <td id="td2">2 64 08 75 051 013 | 37</td>
+		    <td id="td2"><?php echo $ligne['fonction'];?></td>
 	    </tr>
 	    <tr>
 		    <td id="td1">Date d'entrée dans l'entreprise</td>
-		    <td id="td2">27/10/2007</td>
+		    <td id="td2"><?php echo $ligne['dateEntreeEntreprise'];?></td>
 	    </tr>
+	    <?php } ?>
     </table>
     </div>
     

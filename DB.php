@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 mysql_query("SET NAMES 'utf8'");
 
 //Connexion à la BDD
@@ -36,7 +36,27 @@ function Connect()
 function VerifConnexion(){
 	//connection a la base
 	$dbh = connect();
-	$sql = "SELECT * FROM Utilisateur WHERE pseudo = 'fxrame'";
+	$sql = "SELECT motDePasse, pseudo FROM Utilisateur WHERE pseudo = '".$_POST['login']."'";
+	$query = $dbh->query($sql);
+
+	if ($query)
+	{
+		return $query;
+	}
+	else
+	{
+		return false;
+	}
+
+
+}
+
+//Select récupérant les données de l'utilisateur connecté
+
+function SelectUtilisateur(){
+	//connection a la base
+	$dbh = connect();
+	$sql = "SELECT * FROM Utilisateur WHERE pseudo = '".$_SESSION['pseudo']."'";
 	$query = $dbh->query($sql);
 
 	if ($query)
@@ -54,7 +74,7 @@ function VerifConnexion(){
 function Formation(){
 	//connection a la base
 	$dbh = connect();
-	$sql = "SELECT * FROM Formation, Faire WHERE Formation.idFormation = Faire.idFormation AND Faire.idUtilisateur = (SELECT idUtilisateur FROM Utilisateur Where Utilisateur.pseudo = 'fxrame')";
+	$sql = "SELECT * FROM Formation, Faire WHERE Formation.idFormation = Faire.idFormation AND Faire.idUtilisateur = (SELECT idUtilisateur FROM Utilisateur Where Utilisateur.pseudo = '".$_SESSION['pseudo']."')";
 	$query = $dbh->query($sql);
 
 	if ($query)

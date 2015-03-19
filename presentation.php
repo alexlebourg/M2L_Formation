@@ -1,5 +1,7 @@
 <?php include 'connexion.php';
 include_once 'DB.php';
+session_start()
+
 ?>
 <header>
 		<!-- Image M2L de la présentation -->
@@ -15,12 +17,7 @@ include_once 'DB.php';
 			    <div id="menuDivFormation"><a href="formations.php"id="menuF">Formations</a></div>
 			    <div id="menuDivCompte"><a href="compte.php"id="menuC">Compte</a></div>
 			    <div id="menuDivLog">
-			    Bienvenue <?php $liste = VerifConnexion();
-    								foreach ($liste as $ligne)
-								    {
-								    	echo $ligne['prenom']." ";
-								    	echo $ligne['nom'];
-								    }?>
+			    <?php echo "Bienvenue ".$_SESSION['prenom']." ".$_SESSION['nom'];?>
     
 				</div>
 				
