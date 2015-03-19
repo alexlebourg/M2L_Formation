@@ -65,13 +65,30 @@ body
 	margin-left: 30px;
 	
 }
+/* lien de déconnexion*/
+#deconnexion
+{
+	display: inline-block;
+	padding: 10px 10px 10px 10px;
+	margin-left: 30px;
+	
+}
 /* Div du menu: Se connecter*/
 #menuDivLog
 {
 	display: inline-block;
 	padding: 5px 10px 5px 10px;
 	border: 1px solid black;
+	font-weight: normal;
+	font-size: 16px;
+}
+
+#menuConnexion
+{
+	display: inline-block;
+	padding: 5px 10px 5px 10px;
 	margin-left: 25%;
+	border: 1px solid black;
 	font-weight: normal;
 	font-size: 16px;
 }
@@ -96,7 +113,7 @@ a
 	text-decoration: none;
 }
 /*Survol lien menu*/
-#menuDivAccueil:hover,#menuDivFormation:hover,#menuDivCompte:hover
+#menuDivAccueil:hover,#menuDivFormation:hover,#menuDivCompte:hover,#deconnexion:hover
 {
 	box-shadow: 6px 6px 6px grey;
 	

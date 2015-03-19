@@ -55,16 +55,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	if (!empty($_POST['pwd']) && md5($_POST['pwd']) === $motDePasse)
 	{
 		$pwd = $_POST['pwd'];
+		header('Location: http://localhost:8888/Annee%202/M2L/accueilConnectee.php');
 	}
 	else
 	{
 		array_push($MessageErreur, "Mot de passe incorrect");
 	}
 	
-	if (isset($pseudo) && isset($pwd))
-	{
-		header('Location: http://localhost:8888/Annee%202/M2L/accueilConnectee.php');
-	}
+	
 }
 
 

@@ -33,7 +33,7 @@
 	   <!-- Menu du site -->
 	    <nav id="menu">
 		    
-			    <div id="menuDivLog">
+			    <div id="menuConnexion">
 			    <form  method="post" action="accueil.php">
 			    Connexion:
 			    	<input type="text" name="login" placeholder="Pseudo" value="<?php echo isset($pseudo)?$pseudo:''?>"/>

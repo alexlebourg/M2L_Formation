@@ -13,13 +13,11 @@ session_start()
 	   <!-- Menu du site -->
 	    <nav id="menu">
 		    
-			    <div id="menuDivAccueil"><a href="accueil.php">Accueil</a></div>
+			    <div id="menuDivAccueil"><a href="accueilConnectee.php">Accueil</a></div>
 			    <div id="menuDivFormation"><a href="formations.php"id="menuF">Formations</a></div>
 			    <div id="menuDivCompte"><a href="compte.php"id="menuC">Compte</a></div>
-			    <div id="menuDivLog">
-			    <?php echo "Bienvenue ".$_SESSION['prenom']." ".$_SESSION['nom'];?>
-    
-				</div>
+			    <div id="deconnexion"><a href="accueil.php"id="menuC">Se Déconnecter</a></div>
+			    <div id="menuDivLog"><?php echo "Bienvenue ".$_SESSION['prenom']." ".$_SESSION['nom'];?></div>
 				
 	    
 	    </nav>
