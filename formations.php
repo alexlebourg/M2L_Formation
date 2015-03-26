@@ -103,6 +103,12 @@
     ?>
 			</table>
 	    
+	    <br>
+	    <?php 
+	    if ($_SESSION['Responsable'] == 1)
+	    	include_once 'listeEmployes.php';
+	    ?>
+	    
     	</div>
     
     

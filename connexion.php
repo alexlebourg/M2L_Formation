@@ -7,11 +7,11 @@ include_once 'DB.php';
 
 
 $liste = VerifConnexion();
-    
 
-    foreach ($liste as $ligne)
-    {
-    	?>
+
+foreach ($liste as $ligne)
+{
+	?>
             	<td>
             	<?php
             	$motDePasse = $ligne['motDePasse'];
@@ -21,6 +21,7 @@ $liste = VerifConnexion();
             	</td>
             	<?php
      }
+
 
      
      $liste = SelectUtilisateur();
@@ -36,9 +37,24 @@ $liste = VerifConnexion();
                  	?>
                  	</td>
                  	<?php
-          }
-          
+          } 
 
+      $liste = Responsable();
+           
+           
+          foreach ($liste as $ligne)
+          {
+          	?>
+                           	<td>
+                           	<?php
+                           	$_SESSION['Responsable'] = $ligne['Responsable'];
+                           	$_SESSION['Service'] = $ligne['Service'];              	
+                           	?>
+                           	</td>
+                           	<?php
+                    }
+               
+               
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$MessageErreur= array();
@@ -55,7 +71,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	if (!empty($_POST['pwd']) && md5($_POST['pwd']) === $motDePasse)
 	{
 		$pwd = $_POST['pwd'];
-		header('Location: http://localhost:8888/Annee%202/M2L/accueilConnectee.php');
+		array_push($MessageErreur, "passage OK");
+		header ("Location: accueilConnectee.php");
+		
 	}
 	else
 	{
@@ -65,6 +83,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	
 }
 
-
-
 ?>
+

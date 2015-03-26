@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 mysql_query("SET NAMES 'utf8'");
 
 //Connexion à la BDD
@@ -70,6 +70,27 @@ function SelectUtilisateur(){
 
 
 }
+
+
+function Responsable()
+{
+	//Connection à la base
+	$dbh = connect();
+	$sql="select * from Responsable, Utilisateur WHERE Responsable.idUtilisateur = Utilisateur.idUtilisateur AND Utilisateur.idUtilisateur = (SELECT idUtilisateur FROM Utilisateur Where Utilisateur.pseudo = '".$_SESSION['pseudo']."')";
+	$query  =  $dbh->query($sql);
+
+	if ($query)
+	{
+		return  $query->fetchAll();
+	}
+	else
+	{
+		return false;
+	}
+
+}
+
+
 
 function Formation(){
 	//connection a la base
@@ -177,6 +198,28 @@ function SelectAllFaire()
 	//Connection à la base
 	$dbh = connect();
 	$sql="select * from Faire, Utilisateur, Formation Where Faire.idUtilisateur=Utilisateur.idUtilisateur AND Faire.idFormation=Formation.idFormation Order by dateFormation";
+	$query  =  $dbh->query($sql);
+
+	if ($query)
+	{
+		return  $query->fetchAll();
+	}
+	else
+	{
+		return false;
+	}
+
+}
+
+
+
+//Select qui retourne la liste des employés du service du responsable connecté
+
+function ListeEmployes()
+{
+	//Connection à la base
+	$dbh = connect();
+	$sql="SELECT * FROM Utilisateur WHERE Utilisateur.idUtilisateur = (SELECT idUtilisateur FROM Salarie Where Salarie.Service = '".$_SESSION['Service']."')";
 	$query  =  $dbh->query($sql);
 
 	if ($query)

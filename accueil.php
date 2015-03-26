@@ -1,5 +1,10 @@
 
-<?php include_once 'connexion.php';?>
+<?php 
+
+include_once 'connexion.php';
+
+
+ //session_destroy();?>
 
 <!DOCTYPE html>
 

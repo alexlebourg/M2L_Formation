@@ -1,6 +1,5 @@
-<?php include 'connexion.php';
+<?php
 include_once 'DB.php';
-session_start()
 
 ?>
 <header>
