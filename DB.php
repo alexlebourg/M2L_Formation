@@ -219,7 +219,7 @@ function ListeEmployes()
 {
 	//Connection à la base
 	$dbh = connect();
-	$sql="SELECT * FROM Utilisateur WHERE Utilisateur.idUtilisateur = (SELECT idUtilisateur FROM Salarie Where Salarie.Service = '".$_SESSION['Service']."')";
+	$sql="SELECT * FROM Utilisateur WHERE Utilisateur.idUtilisateur IN (SELECT idUtilisateur FROM Salarie Where Salarie.Service = '".$_SESSION['Service']."')";
 	$query  =  $dbh->query($sql);
 
 	if ($query)
