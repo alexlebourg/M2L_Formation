@@ -20,7 +20,7 @@
 	    
 	    <div id="corpsSite">
 	    
-	   <?php include 'presentation.php';?>
+	   <?php include 'presentationConnectee.php';?>
 	    
 	    <!-- Présentation des informations personnelles -->
 	    <div id="text">

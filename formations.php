@@ -19,7 +19,7 @@
 	    
 	    
 	   <!-- Photo M2, entpête du site web -->
-	   <?php include 'presentation.php';?>
+	   <?php include 'presentationConnectee.php';?>
 	    
 	    <!-- Présentation des formations -->
 	    

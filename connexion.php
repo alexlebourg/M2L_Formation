@@ -71,9 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	if (!empty($_POST['pwd']) && md5($_POST['pwd']) === $motDePasse)
 	{
 		$pwd = $_POST['pwd'];
-		array_push($MessageErreur, "passage OK");
-		header ("Location: accueilConnectee.php");
-		
+		$_SESSION['test'] = 1;
 	}
 	else
 	{
