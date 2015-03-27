@@ -1,4 +1,7 @@
-<?php session_start() ?>
+<?php session_start(); 
+if ($_SESSION['test'] != 1)
+{header('Location: accueil.php');}
+?>
 <!DOCTYPE html>
 
 <html>
