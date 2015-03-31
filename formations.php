@@ -42,15 +42,15 @@ if ($_SESSION['test'] != 1)
     
 	    	<table>
 				<tr>
-					<td id="td1">Nombre d'heures de DIF capitalisées en 2014</td>
+					<td id="td1">Nombre d'heures de CPF capitalisées en 2014</td>
 					<td id="td2">20</td>
 	    		</tr>
 				<tr>
-					<td id="td1">Nombres d'heures de DIF utilisées</td>
+					<td id="td1">Nombres d'heures de CPF utilisées</td>
 					<td id="td2"><?php $liste = SelectUtilisateur(); foreach ($liste as $ligne) { echo $ligne['DIFUtilisee'];}?></td>
 	    		</tr>
 				<tr>
-					<td id="td1">Nombre d'heures de DIF disponibles</td>
+					<td id="td1">Nombre d'heures de CPF disponibles</td>
 					<td id="td2"><?php $liste = SelectUtilisateur(); foreach ($liste as $ligne) { echo $ligne['nbrDIF']-$ligne['DIFUtilisee'];}?></td>
 	    		</tr>
 	    	</table>
