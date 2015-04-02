@@ -26,7 +26,8 @@
     	<td>
     	
     	<?php
-    	echo "<a href=formationsEmploye.php?idUtilisateur=".$ligne['idUtilisateur'].">".$ligne['nom']." ".$ligne['prenom']."</a>";
+    	$_SESSION['employe']=$ligne['idUtilisateur'];
+    	echo "<a href=formationsEmploye.php>".$ligne['nom']." ".$ligne['prenom']."</a>";
     	?>
     	</td>
     	</tr>

@@ -29,7 +29,7 @@ if ($_SESSION['test'] != 1)
 	    
 	    
 	    <div id="text">
-		    <h1 id="titreText">Formations de :</h1>	
+		    <h1 id="titreText">Formations de <?php echo $_SESSION['employe'];?>:</h1>	
 	    </div>
 	    
 	    

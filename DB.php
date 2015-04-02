@@ -111,106 +111,10 @@ function Formation(){
 
 }
 
-//Select qui retourne un array associatif de la table Utilisateur
 
-function SelectAllUtilisateur()
-{
-	//Connection à la base
-	$dbh = connect();
-	$sql="select * from Utilisateur ";
-	$query  =  $dbh->query($sql);
-
-	if ($query)
-	{
-		return  $query->fetchAll();
-	}
-	else
-	{
-		return false;
-	}
-
-}
-
-//Select qui retourne un array associatif de la table Formations
-
-function SelectAllFormation()
-{
-	//Connection à la base
-	$dbh = connect();
-	$sql="select * from Formation ";
-	$query  =  $dbh->query($sql);
-
-	if ($query)
-	{
-		return  $query->fetchAll();
-	}
-	else
-	{
-		return false;
-	}
-
-}
-
-//Select qui retourne un array associatif de la table Responsable
-
-function SelectAllResponsable()
-{
-	//Connection à la base
-	$dbh = connect();
-	$sql="select * from Responsable, Utilisateur Where Responsable.idUtilisateur=Utilisateur.idUtilisateur ";
-	$query  =  $dbh->query($sql);
-
-	if ($query)
-	{
-		return  $query->fetchAll();
-	}
-	else
-	{
-		return false;
-	}
-
-}
-
-
-//Select qui retourne un array associatif de la table Salariés
-
-function SelectAllSalarie()
-{
-	//Connection à la base
-	$dbh = connect();
-	$sql="select * from Salarie, Utilisateur Where Salarie.idUtilisateur=Utilisateur.idUtilisateur ";
-	$query  =  $dbh->query($sql);
-
-	if ($query)
-	{
-		return  $query->fetchAll();
-	}
-	else
-	{
-		return false;
-	}
-
-}
 
 //Select qui retourne un array associatif de la table Faire
 
-function SelectAllFaire()
-{
-	//Connection à la base
-	$dbh = connect();
-	$sql="select * from Faire, Utilisateur, Formation Where Faire.idUtilisateur=Utilisateur.idUtilisateur AND Faire.idFormation=Formation.idFormation Order by dateFormation";
-	$query  =  $dbh->query($sql);
-
-	if ($query)
-	{
-		return  $query->fetchAll();
-	}
-	else
-	{
-		return false;
-	}
-
-}
 
 
 
