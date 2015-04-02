@@ -26,7 +26,7 @@
     	<td>
     	
     	<?php
-    	echo $ligne['nom']." ".$ligne['prenom'];
+    	echo "<a href=formationsEmploye.php?idUtilisateur=".$ligne['idUtilisateur'].">".$ligne['nom']." ".$ligne['prenom']."</a>";
     	?>
     	</td>
     	</tr>

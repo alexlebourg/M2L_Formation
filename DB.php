@@ -1,6 +1,6 @@
 <?php
 
-mysql_query("SET NAMES 'utf8'");
+
 
 //Connexion à la BDD
 
@@ -16,6 +16,7 @@ function Connect()
 		try
 		{
 			$dbh = new PDO($dsn, $user, $pass);
+			$dbh->exec("SET CHARACTER SET utf8");
 				
 		}
 		catch (PDOException $e)
@@ -219,7 +220,7 @@ function ListeEmployes()
 {
 	//Connection à la base
 	$dbh = connect();
-	$sql="SELECT * FROM Utilisateur WHERE Utilisateur.idUtilisateur IN (SELECT idUtilisateur FROM Salarie Where Salarie.Service = '".$_SESSION['Service']."')";
+	$sql="SELECT * FROM Utilisateur WHERE Utilisateur.idUtilisateur IN (SELECT idUtilisateur FROM Salarie Where Salarie.Service = '".$_SESSION['Service']."') ORDER BY nom";
 	$query  =  $dbh->query($sql);
 
 	if ($query)
