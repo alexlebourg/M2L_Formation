@@ -75,13 +75,34 @@ function SelectUtilisateur(){
 
 }
 
-//Select récupérant les données de la table responsable de l'utilisateur connecté
+//Select récupérant les données de la table Responsable de l'utilisateur connecté
 
 function Responsable()
 {
 	//Connection à la base
 	$dbh = connect();
 	$sql="select * from Responsable, Utilisateur WHERE Responsable.idUtilisateur = Utilisateur.idUtilisateur AND Utilisateur.idUtilisateur = (SELECT idUtilisateur FROM Utilisateur Where Utilisateur.pseudo = '".$_SESSION['pseudo']."')";
+	$query  =  $dbh->query($sql);
+
+	if ($query)
+	{
+		return  $query->fetchAll();
+	}
+	else
+	{
+		return false;
+	}
+
+}
+
+
+//Select récupérant les données de la table Salarie de l'utilisateur connecté
+
+function Salarie()
+{
+	//Connection à la base
+	$dbh = connect();
+	$sql="select * from Salarie, Utilisateur WHERE Utilisateur.idUtilisateur = Salarie.idUtilisateur AND Utilisateur.idUtilisateur = (SELECT idUtilisateur FROM Utilisateur Where Utilisateur.pseudo = '".$_SESSION['pseudo']."')";
 	$query  =  $dbh->query($sql);
 
 	if ($query)
@@ -137,4 +158,86 @@ function ListeEmployes()
 
 }
 
+
+
+//Select qui retourne les informations sur un employé sélectionné par un responsable dans sa liste
+
+function EmployeSelectionne()
+{
+	//Connection à la base
+	$dbh = connect();
+	$sql="SELECT * FROM Utilisateur WHERE Utilisateur.idUtilisateur = '".$_SESSION['idEmploye']."'";
+	$query  =  $dbh->query($sql);
+
+	if ($query)
+	{
+		return  $query->fetchAll();
+	}
+	else
+	{
+		return false;
+	}
+
+}
+
+//Select récupérant les formations de l'employé sélectionné par un responsable dans sa liste
+
+function FormationEmploye(){
+	//connection a la base
+	$dbh = connect();
+	$sql = "SELECT * FROM Formation, Faire WHERE Formation.idFormation = Faire.idFormation AND Faire.idUtilisateur = '".$_SESSION['idEmploye']."'";
+	$query = $dbh->query($sql);
+
+	if ($query)
+	{
+		return $query;
+	}
+	else
+	{
+		return false;
+	}
+
+
+}
+
+
+//Select qui retourne la liste de tous les responsables pour le service RH
+
+function ListeResponsableRH()
+{
+	//Connection à la base
+	$dbh = connect();
+	$sql="SELECT * FROM Utilisateur, Responsable WHERE Utilisateur.idUtilisateur = Responsable.idUtilisateur ORDER BY nom";
+	$query  =  $dbh->query($sql);
+
+	if ($query)
+	{
+		return  $query->fetchAll();
+	}
+	else
+	{
+		return false;
+	}
+
+}
+
+//Select qui retourne la liste de tous les salariés pour le service RH
+
+function ListeSalarieRH()
+{
+	//Connection à la base
+	$dbh = connect();
+	$sql="SELECT * FROM Utilisateur, Salarie WHERE Utilisateur.idUtilisateur = Salarie.idUtilisateur ORDER BY nom";
+	$query  =  $dbh->query($sql);
+
+	if ($query)
+	{
+		return  $query->fetchAll();
+	}
+	else
+	{
+		return false;
+	}
+
+}
 ?>	

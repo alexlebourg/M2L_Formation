@@ -1,9 +1,11 @@
 <?php
 session_start(); 
 if ($_SESSION['test'] != 1)
-{header('Location: accueil.php');} ?>
+{header('Location: accueil.php');} 
+$_SESSION['idEmploye']=$_GET['id']?>
 
-<!-- Cette page affiche les formations d'un salarié sous la responsabilité d'un responsable à partir de la page formation de ce dernier -->
+<!-- Cette page affiche les informations pour un responsable d'un salarié du même service
+		On y accède par un clic sur un salarié dans le tableau de la liste des employés de la page Formation d'un responsable -->
 
 <!DOCTYPE html>
 
@@ -24,15 +26,40 @@ if ($_SESSION['test'] != 1)
 		    
 		    <!-- Inclusion de presentation.php, entpête du site web avec la photo M2L -->
 		    
-		    <h1 id="titreText">Formations de <?php echo $_SESSION['employe'];?>:</h1>	
+		    <h2>Employé(e) :</h2>	
 	
 			<div id="divFormation">
 		    	
-		    	<h2>Récapitulatif des heures de CPF (Compte Personnel de Formation)</h2>
 		    	
-		    	<!-- Table récapitulative des heures de DIF -->
-		    
-	    
+		    	
+		    	<!-- Information sur le salarié-->	    	
+    			<table id="info">
+					    <?php
+					    	$liste = EmployeSelectionne();
+					    	foreach ($liste as $ligne) { ?>
+				    <tr>
+					    <td id="td1">Nom du salarié</td>
+					    <td id="td2"><?php echo $ligne['nom'];?></td>
+				    </tr>
+				    <tr>
+					    <td id="td1">Prénom du salarié</td>
+					    <td id="td2"><?php echo $ligne['prenom'];?></td>
+				    </tr>
+				    <tr>
+					    <td id="td1">Fonction</td>
+					    <td id="td2"><?php echo $ligne['fonction'];?></td>
+				    </tr>
+				    <tr>
+					    <td id="td1">Date d'entrée dans l'entreprise</td>
+						<td id="td2"><?php echo $ligne['dateEntreeEntreprise'];?></td>
+					</tr>
+					<?php } ?>
+				</table>
+				<br>
+	    		
+	    		<!-- Table récapitulative des heures de DIF -->
+	    		<br>
+	    		<h2>Récapitulatif des heures de CPF (Compte Personnel de Formation)</h2>
 		    	<table>
 					<tr>
 						<td id="td1">Nombre d'heures de CPF capitalisées en 2014</td>
@@ -40,11 +67,11 @@ if ($_SESSION['test'] != 1)
 		    		</tr>
 					<tr>
 						<td id="td1">Nombres d'heures de CPF utilisées</td>
-						<td id="td2"><?php $liste = SelectUtilisateur(); foreach ($liste as $ligne) { echo $ligne['DIFUtilisee'];}?></td>
+						<td id="td2"><?php $liste = EmployeSelectionne(); foreach ($liste as $ligne) { echo $ligne['DIFUtilisee'];}?></td>
 		    		</tr>
 					<tr>
 						<td id="td1">Nombre d'heures de CPF disponibles</td>
-						<td id="td2"><?php $liste = SelectUtilisateur(); foreach ($liste as $ligne) { echo $ligne['nbrDIF']-$ligne['DIFUtilisee'];}?></td>
+						<td id="td2"><?php $liste = EmployeSelectionne(); foreach ($liste as $ligne) { echo $ligne['nbrDIF']-$ligne['DIFUtilisee'];}?></td>
 		    		</tr>
 		    	</table>
 		    	<br>
@@ -62,7 +89,7 @@ if ($_SESSION['test'] != 1)
 		    			</tr>
 		    		</thead>
 			    	<?php
-			    	$liste = Formation();
+			    	$liste = FormationEmploye();
 		    		foreach ($liste as $ligne){ ?>
 	    	
 	    			<tr>
@@ -81,10 +108,6 @@ if ($_SESSION['test'] != 1)
 	    			</tr>
 	    			<?php } ?>
 				</table>
-		    	
-		    	<?php 
-		    	if ($_SESSION['Responsable'] == 1)
-		    	include_once 'listeEmployes.php'; ?>
 	    
     		</div>
 

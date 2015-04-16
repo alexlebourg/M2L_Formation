@@ -86,7 +86,9 @@ if ($_SESSION['test'] != 1)
 					si celui-ci est un responsable -->
 				<?php 
 				if ($_SESSION['Responsable'] == 1)
-	    		include_once 'listeEmployes.php';?>
+	    		include_once 'listeEmployes.php';
+				if ($_SESSION['Service'] == "Ressources Humaines")
+				include 'ressourcesHumaines.php';?>
 	    	</div>
 	    </div>
 	    

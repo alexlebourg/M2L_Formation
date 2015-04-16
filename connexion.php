@@ -21,7 +21,8 @@ $liste = SelectUtilisateur();
      foreach ($liste as $ligne)
      	{
      		$_SESSION['prenom'] = $ligne['prenom'];
-            $_SESSION['nom'] = $ligne['nom'];              	
+            $_SESSION['nom'] = $ligne['nom'];
+            $_SESSION['identifiant'] = $ligne['idUtilisateur'];
 		} 
 /*Récupère le statut responsable (oui ou non) et le service de l'utilisateur connecté
 	afin d'autoriser ou non l'affichage des informations des autres membres de son service*/
@@ -33,7 +34,13 @@ $liste = Responsable();
         $_SESSION['Service'] = $ligne['Service'];
 	}
 
-          
+$liste = Salarie();
+foreach ($liste as $ligne)
+{
+	$_SESSION['Responsable'] = $ligne['Responsable'];
+	$_SESSION['Service'] = $ligne['Service'];
+}
+	
          
 //Condition IF permettant d'afficher les messages d'erreur lors de la connexion
           
