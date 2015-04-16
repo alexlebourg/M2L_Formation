@@ -1,7 +1,15 @@
 /*
-	Page d'accueil
+	Fichier de mise en forme de tout le site. Il comprend:
+		- 1. Une mise en forme générale pour toutes les pages du site
+		- 2. Une partie pour la mise en page du menu: MENU
+		- 3. Une partie pour la mise en forme des données personnelles: COMPTE
+		- 4. Une partie pour la mise en page des formations: FORMATIONS
 */
 
+
+/*
+	1. MISE EN FORME GÉNÉRALE POUR TOUTES LES PAGES DU SITE
+*/
 
 
 body
@@ -9,13 +17,7 @@ body
 	background-image:linear-gradient(to top, #CBCBCB, #81B7DF);
 }
 
-/* Div de l'entête*/
-#M2L
-{
-	text-align: center;
-}
-
-/* Div comprennant tout le corps de texte de la page d'accueil*/
+/* Div comprennant tout le corps de texte des pages */
 #corpsSite
 {
 	margin-left: 10%;
@@ -31,7 +33,57 @@ body
 	text-align: justify;
 }
 
-/* Div comprenant tout le Menu*/
+h1
+{
+	font-family: cursive;
+}
+
+h2
+{
+	font-family: cursive;
+	font-size: 20px;
+	margin-left: 30px
+}
+
+a
+{
+	color: black;
+	text-decoration: none;
+}
+
+td
+{
+	border: 1px solid black;
+	padding-right: 10px;
+}
+
+/*Mise en forme de la colonne 1 des tables */
+#td1
+{
+	text-align: right;
+	font-weight: bold;
+}
+
+/*Mise en forme de la colonne 2 des tables */
+td2
+{
+	padding-left: 20px;
+}
+
+/*
+	2. MENU
+*/
+
+
+
+/* Div de l'entête*/
+#M2L
+{
+	text-align: center;
+}
+
+
+/* Div comprenant tout le Menu */
 #menu
 {
 	border: 1px double black;
@@ -44,20 +96,22 @@ body
 	
 }
 
-/* Div du menu: Accueil*/
+/* Div du menu connecté: Bouton Accueil*/
 #menuDivAccueil
 {
 	display: inline-block;
 	padding: 10px 10px 10px 10px;
 }
-/* Div du menu: Formation*/
+
+/* Div du menu connecté: Bouton Formation*/
 #menuDivFormation
 {
 	display: inline-block;
 	padding: 10px 10px 10px 10px;
 	margin-left: 30px;
 }
-/* Div du menu: Compte*/
+
+/* Div du menu connecté: Bouton Compte*/
 #menuDivCompte
 {
 	display: inline-block;
@@ -65,6 +119,7 @@ body
 	margin-left: 30px;
 	
 }
+
 /* lien de déconnexion*/
 #deconnexion
 {
@@ -73,7 +128,8 @@ body
 	margin-left: 30px;
 	
 }
-/* Div du menu: Se connecter*/
+
+/* Div du menu connecté: Affichage du nom et du prénom de l'utilisateur connecté */
 #menuDivLog
 {
 	display: inline-block;
@@ -83,6 +139,7 @@ body
 	font-size: 16px;
 }
 
+/* Formulaire de connexion */
 #menuConnexion
 {
 	display: inline-block;
@@ -93,6 +150,7 @@ body
 	font-size: 16px;
 }
 
+/* Affichage des erreurs de connexion */
 #connexion
 {
 	font-family: serif;
@@ -101,17 +159,6 @@ body
 	text-align: center;
 }
 
-/* Présentation de la maison des ligues: Titre*/
-#titreText
-{
-	font-family: cursive;
-}
-
-a
-{
-	color: black;
-	text-decoration: none;
-}
 /*Survol lien menu*/
 #menuDivAccueil:hover,#menuDivFormation:hover,#menuDivCompte:hover,#deconnexion:hover
 {
@@ -120,36 +167,29 @@ a
 }
 
 
+
 /*
-	Page fomation
+	3. COMPTE
 */
+
+
+/*Mise en forme de la table des informations personnelles */
 #tableInfo
 {
 	margin-left: auto;
 	margin-right: auto;
 }
-td
-{
-	border: 1px solid black;
-	padding-right: 10px;
-}
-#td1
-{
-	text-align: right;
-	font-weight: bold;
-}
-td2
-{
-	padding-left: 20px;
-}
+
 #blanc
 {
 	border: none;
 }
 
 
+
+
 /*
-	Page compte
+	4. FORMATIONS
 */
 
 #tableFormation
@@ -171,10 +211,5 @@ thead
 {
 	width: 20%;
 }
-h2
-{
-	font-family: cursive;
-	font-size: 20px;
-	margin-left: 30px
-}
+
 

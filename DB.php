@@ -1,5 +1,6 @@
 <?php
 
+// Page de connexion à la base de données et des requêtes
 
 
 //Connexion à la BDD
@@ -29,10 +30,12 @@ function Connect()
 
 
 
+//       ---------------- Requêtes ----------------
 
 
 
-//Select récupérant les données correspondant au pseudo renseigné afin de vérifier la correspondance et afficher les données correspondantes
+/*Select récupérant les données correspondant au pseudo renseigné afin de vérifier la correspondance
+	et afficher les données correspondantes */
 
 function VerifConnexion(){
 	//connection a la base
@@ -49,8 +52,8 @@ function VerifConnexion(){
 		return false;
 	}
 
-
 }
+
 
 //Select récupérant les données de l'utilisateur connecté
 
@@ -72,6 +75,7 @@ function SelectUtilisateur(){
 
 }
 
+//Select récupérant les données de la table responsable de l'utilisateur connecté
 
 function Responsable()
 {
@@ -92,6 +96,7 @@ function Responsable()
 }
 
 
+//Select récupérant les formations de l'utilisateur connecté
 
 function Formation(){
 	//connection a la base
@@ -110,12 +115,6 @@ function Formation(){
 
 
 }
-
-
-
-//Select qui retourne un array associatif de la table Faire
-
-
 
 
 //Select qui retourne la liste des employés du service du responsable connecté
