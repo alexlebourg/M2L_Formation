@@ -24,7 +24,7 @@ if ($_SESSION['test'] != 1)
 	    
 	    
 		    <!-- Inclusion de presentation.php, entpête du site web avec la photo M2L -->
-		    <?php include 'presentationConnectee.php';?>
+		    <?php include 'presentation/presentationConnectee.php';?>
 		    
 		    
 		    <!-- Présentation des informations personnelles -->
@@ -75,7 +75,7 @@ if ($_SESSION['test'] != 1)
 				    <?php } ?>
 			    </table>
     		</div>
-    
+    		<?php include 'presentation/footer.php';?>
     	</div>
     
     </body>

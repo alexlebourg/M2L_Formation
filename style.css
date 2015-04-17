@@ -4,6 +4,7 @@
 		- 2. Une partie pour la mise en page du menu: MENU
 		- 3. Une partie pour la mise en forme des données personnelles: COMPTE
 		- 4. Une partie pour la mise en page des formations: FORMATIONS
+		- 5. Une partie pour la mise en page de l'aide: PAGE D'AIDE
 */
 
 
@@ -15,6 +16,37 @@
 body
 {
 	background-image:linear-gradient(to top, #CBCBCB, #81B7DF);
+}   
+
+footer
+{
+	text-align: center;
+	font-size : 11px;
+	padding-top: 40px;
+	
+}
+/* Pied de Page de toutes les pages*/
+#pdp
+{
+	text-decoration: underline;
+}
+
+#pdp:HOVER
+{
+	color: silver;
+}
+
+#lienEmploye
+{
+	color: #2304e3;
+	
+}
+
+#lienEmploye:HOVER
+{
+	color: #81B7DF;
+	text-decoration: underline;
+	font-style: italic;
 }
 
 /* Div comprennant tout le corps de texte des pages */
@@ -25,7 +57,7 @@ body
 	padding-left: 3%;
 	padding-right: 3%;
 	padding-top: 5%;
-	padding-bottom: 10%;
+	padding-bottom: 1%;
 	background: white;
 	border-radius: 20px;
 	border: 1px black outset;
@@ -212,4 +244,23 @@ thead
 	width: 20%;
 }
 
+
+
+/*
+	5. PAGE D'AIDE
+*/
+
+#textAide
+{
+	color: #676767;
+}
+
+
+#image
+{
+	border: 1px double black;
+	border-radius: 10px;
+	box-shadow: 10px 10px 10px #5a5a5a;
+	
+}
 

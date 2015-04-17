@@ -22,7 +22,7 @@ $_SESSION['idEmploye']=$_GET['id']?>
 	    <div id="corpsSite">
 	    
 		    <!-- Photo M2, entpête du site web -->
-		    <?php include 'presentationConnectee.php';?>
+		    <?php include 'presentation/presentationConnectee.php';?>
 		    
 		    <!-- Inclusion de presentation.php, entpête du site web avec la photo M2L -->
 		    
@@ -110,7 +110,7 @@ $_SESSION['idEmploye']=$_GET['id']?>
 				</table>
 	    
     		</div>
-
+			<?php include 'presentation/footer.php';?>
     	</div> 	
     
     </body>

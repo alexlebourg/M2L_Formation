@@ -28,9 +28,9 @@ session_start();
 		   
 		   <?php
 		   if ($_SESSION['test'] == 1)
-		   {include 'presentationConnectee.php';}
+		   {include 'presentation/presentationConnectee.php';}
 		   else
-		   {include 'presentation.php';} ?>
+		   {include 'presentation/presentation.php';} ?>
 		   
 		    
 		    <!-- Présentation de la maison des ligues -->
@@ -44,7 +44,7 @@ session_start();
 			    <p>Il a pour vocation d'héberger les structures sportives régionales, de leur fournir des services administratifs, comptables et juridiques. Entièrement financée par la région Lorraine, la Maison Régionale des Sports de Lorraine est gérée en partenariat par la région Lorraine et le Comité Régional Olympique et Sportif de Lorraine (CROSL) qui est l'initiateur d'une politique sportive régionale unitaire.</p>
 			    
 		    </div>
-
+		    <?php include 'presentation/footer.php';?>
     	</div>
     
     </body>

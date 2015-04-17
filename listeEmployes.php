@@ -22,7 +22,7 @@
     		<td>
     			<?php
     			$idEmploye=$ligne['idUtilisateur'];
-    			echo "<a href=formationsEmploye.php?id=$idEmploye>".$ligne['nom']." ".$ligne['prenom']."</a>"; ?>
+    			echo "<a id=\"lienEmploye\" href=formationsEmploye.php?id=$idEmploye>".$ligne['nom']." ".$ligne['prenom']."</a>"; ?>
     		</td>
     	</tr>
     	<?php } ?>

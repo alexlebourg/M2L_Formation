@@ -20,7 +20,7 @@ if ($_SESSION['test'] != 1)
     	<div id="corpsSite">
     		
     		<!-- Inclusion de presentation.php, entpête du site web avec la photo M2L -->
-	     	<?php include 'presentationConnectee.php';?>
+	     	<?php include 'presentation/presentationConnectee.php';?>
 	     
 	     	<!-- Présentation des formations -->
 	     
@@ -90,6 +90,7 @@ if ($_SESSION['test'] != 1)
 				if ($_SESSION['Service'] == "Ressources Humaines")
 				include 'ressourcesHumaines.php';?>
 	    	</div>
+	    	<?php include 'presentation/footer.php';?>
 	    </div>
 	    
     </body>
