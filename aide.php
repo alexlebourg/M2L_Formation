@@ -63,13 +63,13 @@ session_start();
 			    	<br><b>- Accueil :</b> renvoie à la page d'accueil
 			    	<br><b>- Formations:</b> détail des heures de CPF et la liste des formations faites
 			    	<br><b>- Compte :</b> regroupe les données personnelles de l'utilisateur
-				    <p><img id="image" src="aideImage/Menu.png" height="80%" width="80%" alt="Photo non chargée" title="Menu.png"></p>
+				    <p><img id="image" src="aideImage/Menu.png" width="80%" alt="Photo non chargée" title="Menu.png"></p>
 			    </p>
 			    <br><br>
 			    <p>
 				    <h2 id="leg">Mentions légales</h2>
 				    Afin d'accéder aux mentions légales, cliquer sur le lien <b>"Mentions Légales"</b> au bas de la page
-				    <p><img id="image" src="aideImage/Footer.png" height="90%" width="90%" alt="Photo non chargée" title="Footer.png"></p>
+				    <p><img id="image" src="aideImage/Footer.png" width="90%" alt="Photo non chargée" title="Footer.png"></p>
 			    </p>
 			    <br><br>
 			    <p>
@@ -78,7 +78,7 @@ session_start();
 			    	Vous optiendrez en premier lieu le récapitulatif de votre Compteur Personnel de Formations (CPF) :
 			    	<p><img id="image" src="aideImage/RecapCPF.png" alt="Photo non chargée" title="RecapCPF.png"></p>
 			    	Puis la liste de vos formations effectuées :
-				    <p><img id="image" src="aideImage/ListeFormations.png" height="80%" width="80%"  alt="Photo non chargée" title="ListeFormations.png"></p>
+				    <p><img id="image" src="aideImage/ListeFormations.png" width="80%"  alt="Photo non chargée" title="ListeFormations.png"></p>
 			    </p>
 			    
 			    <p>

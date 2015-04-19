@@ -38,9 +38,10 @@ footer
 
 #lienEmploye
 {
-	color: #2304e3;
+	color: #676767;
 	
 }
+
 
 #lienEmploye:HOVER
 {
@@ -247,7 +248,26 @@ thead
 
 
 /*
-	5. PAGE D'AIDE
+	5. FORMATION EMPLOYE
+*/
+
+#ajoutForma
+{
+	margin-left: 45%;
+	margin-top: 3%;
+}
+
+#ajoutOK
+{
+	font-weight: bold;
+	color: #81B7DF;
+	margin-top: 3%;
+	margin-left: 35%;
+	
+}
+
+/*
+	6. PAGE D'AIDE
 */
 
 #textAide

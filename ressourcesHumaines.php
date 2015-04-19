@@ -53,5 +53,12 @@
     	</tr>
     	<?php } ?>
 	</table>
-	    
+	
+	<?php if ($_SESSION['Service'] == "Ressources Humaines") {?>
+			<div id="ajoutForma">
+				<form action="FormulaireAjoutFormation.php">
+					<input type="submit" value="Ajouter une formation">
+				</form>
+			</div>
+				<?php }?>  
 </div>

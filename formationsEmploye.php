@@ -2,7 +2,11 @@
 session_start(); 
 if ($_SESSION['test'] != 1)
 {header('Location: accueil.php');} 
-$_SESSION['idEmploye']=$_GET['id']?>
+$_SESSION['idEmploye']=$_GET['id'];
+
+if (!empty($_POST['libelle']))
+include_once 'ajoutFormation.php';
+?>
 
 <!-- Cette page affiche les informations pour un responsable d'un salarié du même service
 		On y accède par un clic sur un salarié dans le tableau de la liste des employés de la page Formation d'un responsable -->
@@ -25,7 +29,10 @@ $_SESSION['idEmploye']=$_GET['id']?>
 		    <?php include 'presentation/presentationConnectee.php';?>
 		    
 		    <!-- Inclusion de presentation.php, entpête du site web avec la photo M2L -->
-		    
+		    <?php if ($_SESSION['ajout']==1){
+		    		echo "<p id=\"ajoutOK\">La formation a été correctement ajoutée</p>";
+		    		$_SESSION['ajout']=0;}?>
+		    		
 		    <h2>Employé(e) :</h2>	
 	
 			<div id="divFormation">
@@ -108,6 +115,13 @@ $_SESSION['idEmploye']=$_GET['id']?>
 	    			</tr>
 	    			<?php } ?>
 				</table>
+				<?php if ($_SESSION['Service'] == "Ressources Humaines") {?>
+				<div id="ajoutForma">
+					<form action="FormulaireAjoutFormation.php">
+						<input type="submit" value="Ajouter une formation">
+					</form>
+				</div>
+				<?php }?>
 	    
     		</div>
 			<?php include 'presentation/footer.php';?>

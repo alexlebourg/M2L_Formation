@@ -240,4 +240,24 @@ function ListeSalarieRH()
 	}
 
 }
+
+//Insert Ajoutant une formation à un employé
+
+function AjoutFormation()
+{
+	//Connection à la base
+	$dbh = connect();
+	$sql="INSERT INTO Formation (libelle, duree, organisme) values ('".$_SESSION['libelle']."','".$_SESSION['duree']."','".$_SESSION['organisme']."');";
+	$query  =  $dbh->query($sql);
+
+	if ($query)
+	{
+		return  $query->fetchAll();
+	}
+	else
+	{
+		return false;
+	}
+
+}
 ?>	

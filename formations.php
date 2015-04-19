@@ -2,6 +2,10 @@
 session_start(); 
 if ($_SESSION['test'] != 1)
 {header('Location: accueil.php');}
+
+if (!empty($_POST['libelle']))
+	include_once 'ajoutFormation.php';
+
 ?>
 
 <!-- Cette page affiche les formations réalisées de l'utilisateur connecté -->
@@ -21,8 +25,13 @@ if ($_SESSION['test'] != 1)
     		
     		<!-- Inclusion de presentation.php, entpête du site web avec la photo M2L -->
 	     	<?php include 'presentation/presentationConnectee.php';?>
-	     
-	     	<!-- Présentation des formations -->
+			
+			<?php if ($_SESSION['ajout']==1){
+		    	echo "<p id=\"ajoutOK\">La formation a été correctement ajoutée</p>";
+		    	$_SESSION['ajout']=0;}?>
+
+		    
+		    <!-- Présentation des formations -->
 	     
 		 	<h1 id="titreText">Les formations:</h1>
 		 
@@ -86,9 +95,9 @@ if ($_SESSION['test'] != 1)
 					si celui-ci est un responsable -->
 				<?php 
 				if ($_SESSION['Responsable'] == 1)
-	    		include_once 'listeEmployes.php';
+	    			include_once 'listeEmployes.php';
 				if ($_SESSION['Service'] == "Ressources Humaines")
-				include 'ressourcesHumaines.php';?>
+					include 'ressourcesHumaines.php';?>
 	    	</div>
 	    	<?php include 'presentation/footer.php';?>
 	    </div>

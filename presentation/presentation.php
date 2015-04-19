@@ -20,7 +20,7 @@ session_start();
 			<form  method="post" action="accueil.php">
 				Connexion:
 				<input type="text" name="login" placeholder="Pseudo" value="<?php echo isset($pseudo)?$pseudo:''?>"/>
-				<input type="password" name="pwd"placeholder="Mot de Passe" value="<?php echo isset($pwd)?$pwd:''?>"/>
+				<input type="password" name="pwd" placeholder="Mot de Passe" value="<?php echo isset($pwd)?$pwd:''?>"/>
 				<input type="submit" name="OK" value="Se Connecter">
 			</form>
 			<div id="connexion">
