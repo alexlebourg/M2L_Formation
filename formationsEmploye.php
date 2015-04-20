@@ -3,9 +3,10 @@ session_start();
 if ($_SESSION['test'] != 1)
 {header('Location: accueil.php');} 
 $_SESSION['idEmploye']=$_GET['id'];
+$_SESSION['afecteForma']=$_GET['aFo'];
 
-if (!empty($_POST['libelle']))
-include_once 'ajoutFormation.php';
+
+include_once 'affecteFormation.php';
 ?>
 
 <!-- Cette page affiche les informations pour un responsable d'un salarié du même service
@@ -115,12 +116,32 @@ include_once 'ajoutFormation.php';
 	    			</tr>
 	    			<?php } ?>
 				</table>
-				<?php if ($_SESSION['Service'] == "Ressources Humaines") {?>
-				<div id="ajoutForma">
-					<form action="FormulaireAjoutFormation.php">
-						<input type="submit" value="Ajouter une formation">
-					</form>
-				</div>
+				<?php if ($_SESSION['Service'] == "Ressources Humaines") {
+						if (empty($_SESSION['afecteForma'])) {?>
+							<div id="affecterForma">
+								<form method="post" action="formationsEmploye.php?id=<?php echo $_SESSION['idEmploye']?>&aFo=1">
+									<input type="submit" value="Affecter une Formation">
+								</form>
+							</div>
+						<?php }
+						else {?>
+						<div id="affecterForma">
+								<form method="post" action="formationsEmploye.php?id=<?php echo $_SESSION['idEmploye']?>">
+									<select name="formationsListe" id="formationsListe">
+									<?php $liste = AllFormation();
+		    							foreach ($liste as $ligne) {?>
+										<option  value="<?php echo $ligne['idFormation'] ?>"><?php echo $ligne['libelle'];?></option>
+									<?php }?>
+									</select>
+									<input type="text" placeholder="date: aaaa-mm-jj" name="dateForma" value="<?php echo isset($dateForma)?$dateForma:''?>">
+									<input type="submit" value="Valider">
+									<input onclick="self.location.href='formationsEmploye.php?id=<?php echo $_SESSION['idEmploye']?>'" type="button" value="Annuler">
+								</form>
+						</div>
+						<?php $_SESSION['dateForma']=$dateForma;
+						$_SESSION['nomForma']=$nomForma;
+						}?>
+				
 				<?php }?>
 	    
     		</div>

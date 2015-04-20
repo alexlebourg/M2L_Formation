@@ -251,19 +251,19 @@ thead
 	5. FORMATION EMPLOYE
 */
 
-#ajoutForma
-{
-	margin-left: 45%;
-	margin-top: 3%;
-}
+
 
 #ajoutOK
 {
 	font-weight: bold;
 	color: #81B7DF;
 	margin-top: 3%;
-	margin-left: 35%;
-	
+	margin-left: 35%;	
+}
+
+#affecterForma
+{
+	margin-top: 3%;
 }
 
 /*
@@ -284,3 +284,13 @@ thead
 	
 }
 
+/*
+	6. FORMULAIRE AJOUT FORMATION
+*/
+
+
+#ajoutForma
+{
+	margin-right: 50%;
+	text-align: right;
+}

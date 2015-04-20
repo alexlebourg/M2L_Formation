@@ -134,9 +134,26 @@ function Formation(){
 		return false;
 	}
 
-
 }
 
+//Select récupérant toutes les formations
+
+function AllFormation(){
+	//connection a la base
+	$dbh = connect();
+	$sql = "SELECT * FROM Formation ORDER BY libelle";
+	$query = $dbh->query($sql);
+
+	if ($query)
+	{
+		return $query;
+	}
+	else
+	{
+		return false;
+	}
+
+}
 
 //Select qui retourne la liste des employés du service du responsable connecté
 
@@ -247,7 +264,27 @@ function AjoutFormation()
 {
 	//Connection à la base
 	$dbh = connect();
-	$sql="INSERT INTO Formation (libelle, duree, organisme) values ('".$_SESSION['libelle']."','".$_SESSION['duree']."','".$_SESSION['organisme']."');";
+	$sql="INSERT INTO Formation (libelle, duree, organisme) values ('".$_SESSION['libelle']."','".$_SESSION['duree']."','".$_SESSION['organisme']."')";
+	$query  =  $dbh->query($sql);
+
+	if ($query)
+	{
+		return  $query->fetchAll();
+	}
+	else
+	{
+		return false;
+	}
+
+}
+
+//Insert affectant une formation à un employé
+
+function AffecteFormation()
+{
+	//Connection à la base
+	$dbh = connect();
+	$sql="INSERT INTO Faire (idUtilisateur, idFormation, dateFormation) VALUES ('".$_SESSION['idEmploye']."','".$_SESSION['idForma']."','".$_SESSION['dateForma']."')";
 	$query  =  $dbh->query($sql);
 
 	if ($query)
