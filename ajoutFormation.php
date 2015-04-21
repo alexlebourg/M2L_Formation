@@ -7,10 +7,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	{
 		$_SESSION['libelle'] = $_POST['libelle'];
 	}
-	if (!empty($_POST['date']))
-	{
-		$_SESSION['date'] = $_POST['date'];
-	}
 	if (!empty($_POST['duree']))
 	{
 		$_SESSION['duree'] = $_POST['duree'];
