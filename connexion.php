@@ -1,9 +1,6 @@
 <?php
-
-//Page de vérification de connexion
-
-session_start();
 include_once 'DB.php';
+
 
 // Appelle la fonction récupérant le mote de passe correspondant au pseudo rentré afin d'utoriser l'accès ou non
 

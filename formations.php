@@ -73,7 +73,6 @@ if (!empty($_POST['libelle']))
 			    	<?php
 			    	$liste = Formation();
 		    		foreach ($liste as $ligne) { ?>
-		    		
 		    		<tr>
 		    			<td>
 		    				<?php echo $ligne['libelle'];?>
@@ -91,6 +90,7 @@ if (!empty($_POST['libelle']))
 		    		<?php } ?>
 				</table>
 				<br>
+				
 				<!-- Condition IF permettant d'afficher la liste des employés sous la responsabilité de l'utilisateur connecté
 					si celui-ci est un responsable -->
 				<?php 

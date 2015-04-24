@@ -116,6 +116,11 @@ include_once 'affecteFormation.php';
 	    			</tr>
 	    			<?php } ?>
 				</table>
+				
+				
+				
+				
+				
 				<?php if ($_SESSION['Service'] == "Ressources Humaines") {
 						if (empty($_SESSION['afecteForma'])) {?>
 							<div id="affecterForma">

@@ -4,7 +4,9 @@
 		- 2. Une partie pour la mise en page du menu: MENU
 		- 3. Une partie pour la mise en forme des données personnelles: COMPTE
 		- 4. Une partie pour la mise en page des formations: FORMATIONS
-		- 5. Une partie pour la mise en page de l'aide: PAGE D'AIDE
+		- 5. Une partie pour la mise en page des pour affecter une formation à un employé: FORMATION EMPLOYE
+		- 6. Une partie pour la mise en page de l'aide: PAGE D'AIDE
+		- 7. Une partie pour la mise en page du formulaire d'ajout d'une formation: FORMULAIRE AJOUT FORMATION
 */
 
 
@@ -36,12 +38,12 @@ footer
 	color: silver;
 }
 
+/*Tous les liens renvoyant sur la page des formations d'un employé*/
 #lienEmploye
 {
 	color: #676767;
 	
 }
-
 
 #lienEmploye:HOVER
 {
@@ -225,6 +227,9 @@ td2
 	4. FORMATIONS
 */
 
+
+
+/*Table des foramtions*/
 #tableFormation
 {
 	border-collapse: collapse;
@@ -238,11 +243,15 @@ thead
 
 #tdFormation
 {
-	width: 40%;
+	width: 35%;
 }
 #tdDate,#tdDuree,#tdOrganisme
 {
-	width: 20%;
+	width: 10%;
+}
+#preRequis
+{
+	border: none;
 }
 
 
@@ -253,6 +262,7 @@ thead
 
 
 
+/*Affichage du message confirmant le bon déroulement de l'ajout d'une formation*/
 #ajoutOK
 {
 	font-weight: bold;
@@ -261,21 +271,27 @@ thead
 	margin-left: 35%;	
 }
 
+/*Div permettant d'affecter une formation à l'employé (boutons et menu déroulant)*/
 #affecterForma
 {
 	margin-top: 3%;
 }
 
+
+
 /*
 	6. PAGE D'AIDE
 */
 
+
+
+/*Corps de texte*/
 #textAide
 {
 	color: #676767;
 }
 
-
+/*Image dans la doc*/
 #image
 {
 	border: 1px double black;
@@ -284,9 +300,12 @@ thead
 	
 }
 
+
+
 /*
-	6. FORMULAIRE AJOUT FORMATION
+	7. FORMULAIRE AJOUT FORMATION
 */
+
 
 
 #ajoutForma
@@ -294,3 +313,4 @@ thead
 	margin-right: 50%;
 	text-align: right;
 }
+

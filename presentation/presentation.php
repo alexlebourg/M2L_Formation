@@ -1,6 +1,5 @@
 <?php
 include_once 'DB.php';
-session_start();
 ?>
 
 <!-- Cette page est le menu présent sur la page d'accueil du site si aucune cession n'est active.

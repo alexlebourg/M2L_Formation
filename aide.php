@@ -1,9 +1,9 @@
 
 <?php 
-
 include_once 'connexion.php';
 session_start();
 ?>
+
 <!-- Page d'acueil du site Web de la maison des ligues avec
 	- soit un formulaire de connexion si aucune cession n'est active
 	- Soit le menu avec les onglets permettant la navigaton sur le site -->

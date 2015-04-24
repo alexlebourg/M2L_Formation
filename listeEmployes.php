@@ -1,4 +1,3 @@
-<?php session_start()?>
     
 <!-- Cette page est incluse dans la page "formations.php" si l'utilisateur connecté est un responsable
 		Elle affiche les informations des salariés du service du responsable connecté -->	    

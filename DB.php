@@ -136,6 +136,7 @@ function Formation(){
 
 }
 
+
 //Select récupérant toutes les formations
 
 function AllFormation(){
