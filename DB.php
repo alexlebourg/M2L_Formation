@@ -122,7 +122,7 @@ function Salarie()
 function Formation(){
 	//connection a la base
 	$dbh = connect();
-	$sql = "SELECT * FROM Formation, Faire WHERE Formation.idFormation = Faire.idFormation AND Faire.idUtilisateur = (SELECT idUtilisateur FROM Utilisateur Where Utilisateur.pseudo = '".$_SESSION['pseudo']."')";
+	$sql = "SELECT * FROM Formation, Faire WHERE Formation.idFormation = Faire.idFormation AND Faire.idUtilisateur = (SELECT idUtilisateur FROM Utilisateur Where Utilisateur.pseudo = '".$_SESSION['pseudo']."') ORDER BY dateFormation DESC";
 	$query = $dbh->query($sql);
 
 	if ($query)
@@ -203,7 +203,7 @@ function EmployeSelectionne()
 function FormationEmploye(){
 	//connection a la base
 	$dbh = connect();
-	$sql = "SELECT * FROM Formation, Faire WHERE Formation.idFormation = Faire.idFormation AND Faire.idUtilisateur = '".$_SESSION['idEmploye']."'";
+	$sql = "SELECT * FROM Formation, Faire WHERE Formation.idFormation = Faire.idFormation AND Faire.idUtilisateur = '".$_SESSION['idEmploye']."' ORDER BY dateFormation DESC";
 	$query = $dbh->query($sql);
 
 	if ($query)

@@ -1,6 +1,5 @@
 
-<?php 
-include_once 'connexion.php';
+<?php
 session_start();
 ?>
 <!-- Page d'acueil du site Web de la maison des ligues avec

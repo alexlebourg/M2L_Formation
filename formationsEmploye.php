@@ -6,7 +6,7 @@ $_SESSION['idEmploye']=$_GET['id'];
 $_SESSION['afecteForma']=$_GET['aFo'];
 
 
-include_once 'affecteFormation.php';
+include_once 'PHP/affecteFormation.php';
 ?>
 
 <!-- Cette page affiche les informations pour un responsable d'un salarié du même service

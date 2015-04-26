@@ -4,7 +4,7 @@ if ($_SESSION['test'] != 1)
 {header('Location: accueil.php');}
 
 if (!empty($_POST['libelle']))
-	include_once 'ajoutFormation.php';
+	include_once 'PHP/ajoutFormation.php';
 
 ?>
 
@@ -95,9 +95,9 @@ if (!empty($_POST['libelle']))
 					si celui-ci est un responsable -->
 				<?php 
 				if ($_SESSION['Responsable'] == 1)
-	    			include_once 'listeEmployes.php';
+	    			include_once 'listeEmployes/listeEmployes.php';
 				if ($_SESSION['Service'] == "Ressources Humaines")
-					include 'ressourcesHumaines.php';?>
+					include 'listeEmployes/ressourcesHumaines.php';?>
 	    	</div>
 	    	<?php include 'presentation/footer.php';?>
 	    </div>
