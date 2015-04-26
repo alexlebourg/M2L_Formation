@@ -89,8 +89,8 @@ if (!empty($_POST['libelle']))
 		    		</tr>
 		    		<?php } ?>
 				</table>
-				<br>
-				
+				<br>				
+
 				<!-- Condition IF permettant d'afficher la liste des employés sous la responsabilité de l'utilisateur connecté
 					si celui-ci est un responsable -->
 				<?php 

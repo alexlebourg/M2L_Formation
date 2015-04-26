@@ -298,4 +298,43 @@ function AffecteFormation()
 	}
 
 }
+
+//CPF de l'employé connecté
+function CPF()
+{
+	//Connection à la base
+	$dbh = connect();
+	$sql="SELECT sum(duree) AS SommeCPF FROM Formation, Faire WHERE Formation.idFormation = Faire.idFormation AND Faire.idUtilisateur= '".$_SESSION['idEmploye']."'";
+	$query  =  $dbh->query($sql);
+
+	if ($query)
+	{
+		return  $query->fetchAll();
+	}
+	else
+	{
+		return false;
+	}
+
+}
+
+//Insertion du CPF
+function CPFUtilise()
+{
+	//Connection à la base
+	$dbh = connect();
+	$sql="UPDATE Utilisateur SET DIFUtilisee = '".$_SESSION['CPF']."' WHERE idUtilisateur = '".$_SESSION['idEmploye']."'";
+	$query  =  $dbh->query($sql);
+
+	if ($query)
+	{
+		return  $query->fetchAll();
+	}
+	else
+	{
+		return false;
+	}
+
+}
+
 ?>	

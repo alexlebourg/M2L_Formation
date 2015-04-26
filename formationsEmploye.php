@@ -116,11 +116,7 @@ include_once 'affecteFormation.php';
 	    			</tr>
 	    			<?php } ?>
 				</table>
-				
-				
-				
-				
-				
+							
 				<?php if ($_SESSION['Service'] == "Ressources Humaines") {
 						if (empty($_SESSION['afecteForma'])) {?>
 							<div id="affecterForma">
@@ -148,6 +144,7 @@ include_once 'affecteFormation.php';
 						}?>
 				
 				<?php }?>
+				
 	    
     		</div>
 			<?php include 'presentation/footer.php';?>
