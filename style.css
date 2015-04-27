@@ -117,6 +117,12 @@ td2
 	text-align: center;
 }
 
+/*Taille image de présentation*/
+#imgM2L
+{
+	width: 60%;
+	height: 60%;
+}
 
 /* Div comprenant tout le Menu */
 #menu

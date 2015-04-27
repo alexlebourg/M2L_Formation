@@ -7,7 +7,7 @@ include_once 'DB.php';
 	
 	<header>
 	    <p id="M2L">
-		    <img src="presentation/M2L.png" alt="Photo non chargée" title="M2L">
+		    <img id="imgM2L" src="presentation/M2L.png" alt="Photo non chargée" title="M2L">
 	    </p>
 	</header>
 	
