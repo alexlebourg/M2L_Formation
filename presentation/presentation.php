@@ -16,7 +16,7 @@ include_once 'DB.php';
 	    
 	<nav id="menu">
 		<div id="menuConnexion">
-			<form  method="post" action="accueil.php">
+			<form  method="post" action="accueil.php?test=2">
 				Connexion:
 				<input type="text" name="login" placeholder="Pseudo" value="<?php echo isset($pseudo)?$pseudo:''?>"/>
 				<input type="password" name="pwd" placeholder="Mot de Passe" value="<?php echo isset($pwd)?$pwd:''?>"/>

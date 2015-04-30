@@ -1,6 +1,18 @@
 <?php
 session_start();
+
+$test=0;
+
+if(!empty($_GET['test'])){
+	$test = $_GET['test'];
+}
+		   
+if ($test == 2){
 include_once 'PHP/connexion.php';
+}
+
+
+
 ?>
 
 <!-- Page d'acueil du site Web de la maison des ligues avec
@@ -26,11 +38,14 @@ include_once 'PHP/connexion.php';
 		   		ou le formulaire de connexion si aucune cession n'est ouverte -->
 		   
 		   <?php
-		   if ($_SESSION['test'] == 1)
-		   {include 'presentation/presentationConnectee.php';}
-		   else
-		   {include 'presentation/presentation.php';} ?>
-		   
+			   if(empty($_SESSION['test'])){
+			   	$_SESSION['test'] = 0;}
+			   	
+			   if ($_SESSION['test'] == 1)
+			   {include 'presentation/presentationConnectee.php';}
+			   else
+			   {include 'presentation/presentation.php';} ?>
+			   
 		    
 		    <!-- Présentation de la maison des ligues -->
 		    

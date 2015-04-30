@@ -26,9 +26,12 @@ if (!empty($_POST['libelle']))
     		<!-- Inclusion de presentation.php, entpête du site web avec la photo M2L -->
 	     	<?php include 'presentation/presentationConnectee.php';?>
 			
-			<?php if ($_SESSION['ajout']==1){
-		    	echo "<p id=\"ajoutOK\">La formation a été correctement ajoutée</p>";
-		    	$_SESSION['ajout']=0;}?>
+			<?php 
+			if (!empty($_SESSION['ajout'])){
+				if ($_SESSION['ajout']==1){
+			    	echo "<p id=\"ajoutOK\">La formation a été correctement ajoutée</p>";
+			    	$_SESSION['ajout']=0;}
+			}?>
 
 		    
 		    <!-- Présentation des formations -->

@@ -30,10 +30,13 @@ include_once 'PHP/affecteFormation.php';
 		    <?php include 'presentation/presentationConnectee.php';?>
 		    
 		    <!-- Inclusion de presentation.php, entpête du site web avec la photo M2L -->
-		    <?php if ($_SESSION['ajout']==1){
-		    		echo "<p id=\"ajoutOK\">La formation a été correctement ajoutée</p>";
-		    		$_SESSION['ajout']=0;}?>
-		    		
+		    <?php
+		    if (!empty($_SESSION['ajout'])){
+			    if ($_SESSION['ajout']==1){
+			    		echo "<p id=\"ajoutOK\">La formation a été correctement ajoutée</p>";
+			    		$_SESSION['ajout']=0;}
+		    }?>
+		    
 		    <h2>Employé(e) :</h2>	
 	
 			<div id="divFormation">
@@ -127,7 +130,7 @@ include_once 'PHP/affecteFormation.php';
 						<?php }
 						else {?>
 						<div id="affecterForma">
-								<form method="post" action="formationsEmploye.php?id=<?php echo $_SESSION['idEmploye']?>">
+								<form method="post" action="formationsEmploye.php?id=<?php echo $_SESSION['idEmploye']?>&aFo=0">
 									<select name="formationsListe" id="formationsListe">
 									<?php $liste = AllFormation();
 		    							foreach ($liste as $ligne) {?>
@@ -136,7 +139,7 @@ include_once 'PHP/affecteFormation.php';
 									</select>
 									<input type="text" placeholder="date: aaaa-mm-jj" name="dateForma" value="<?php echo isset($dateForma)?$dateForma:''?>">
 									<input type="submit" value="Valider">
-									<input onclick="self.location.href='formationsEmploye.php?id=<?php echo $_SESSION['idEmploye']?>'" type="button" value="Annuler">
+									<input onclick="self.location.href='formationsEmploye.php?id=<?php echo $_SESSION['idEmploye']?>&aFo=0'" type="button" value="Annuler">
 								</form>
 						</div>
 						<?php $_SESSION['dateForma']=$dateForma;

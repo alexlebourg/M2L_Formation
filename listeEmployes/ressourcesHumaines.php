@@ -1,5 +1,3 @@
-<?php session_start()?>
-    
 <!-- Cette page affiche la liste de tous les employés de la M2L
 		Elle est réservée seulement au service RH qui gère les formations -->
 			    
