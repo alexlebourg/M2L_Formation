@@ -132,10 +132,10 @@ include_once 'PHP/affecteFormation.php';
 						<div id="affecterForma">
 								<form method="post" action="formationsEmploye.php?id=<?php echo $_SESSION['idEmploye']?>&aFo=0">
 									<select name="formationsListe" id="formationsListe">
-									<?php $liste = AllFormation();
+										<?php $liste = AllFormation();
 		    							foreach ($liste as $ligne) {?>
-										<option  value="<?php echo $ligne['idFormation'] ?>"><?php echo $ligne['libelle'];?></option>
-									<?php }?>
+											<option  value="<?php echo $ligne['idFormation'] ?>"><?php echo $ligne['libelle'];?></option>
+										<?php }?>
 									</select>
 									<input type="text" placeholder="date: aaaa-mm-jj" name="dateForma" value="<?php echo isset($dateForma)?$dateForma:''?>">
 									<input type="submit" value="Valider">

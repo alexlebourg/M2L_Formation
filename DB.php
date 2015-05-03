@@ -72,7 +72,6 @@ function SelectUtilisateur(){
 		return false;
 	}
 
-
 }
 
 //Select récupérant les données de la table Responsable de l'utilisateur connecté
